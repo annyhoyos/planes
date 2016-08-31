@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Destino
+{% endblock %}
+{% block content %}
+	<h1>{{ figura.nombre }}</h1>
+	{% if Figuras.imagen %}
+		<img src="/media/{{ editorial.imagen }}" width ="80px" heigth ="80px">
+	{% endif %}
+	<br>
+	<p><b>Nombre:</b> {{ Destino.nombre}} </p>
+	<p><b>Lugar:</b> {{ Destino.lugar}} </p>
+	
+	{% endfor %}
+	
+	<br>
+	<a href="/planes/page/1">Mostrar Destinos</a>
+{% endblock %}

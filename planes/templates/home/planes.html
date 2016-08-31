@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Lista planes
+{% endblock %}
+
+{% block content %}
+	<h1>Lista de planes</h1>
+	<br>
+	{% if planes %}
+	<table class = "table table-hover">
+		<theader>
+			<tr>
+				<th>Plan</th>   
+				  
+			</tr>
+		</theader>
+		{% for p in planes %}
+			<tr>
+				<td>{{ p.nombre }}</td>
+				<td><a class="btn btn-inverse" href="/plan/{{p.id}}"> <li class = "icon-search"></li> Ver </a></td>	
+			</tr>
+		</body>
+		{% endfor %}
+	</table>
+
+	{% else %}
+		<h2>No hay planes disponibles en este momento :( </h2>
+	{% endif %} 
+
+	{% if planes %}
+	<div class="pagination">
+
+		<div class="pagination pagination-centered">
+			<ul>
+				<li><a href="/planes/page/1" > << </a></li>
+				{% if planes.has_previous %}
+				<li><a <href="/planes/page/{{ planes.previous_page_number }}"> Anterior </a></li>
+				{% else %}
+					<li><a href="#"> Anterior </a></li>
+				{% endif %}
+
+				{% if planes.has_next %}
+					<li><a href="/planes/page/{{ planes.next_page_number }}"> Siguiente </a></li>
+				{% else %}
+					<li><a href="#"> Siguiente </a></li>
+				{% endif %}
+					<li><a href="/planes/page/{{ planes.paginator.num_pages }}"> >> </a></li>
+			</ul>
+		</div>
+	</div>
+			<br>
+			<h4>Pagina {{ planes.number }} de {{ planes.paginator.num_pages }}</h4>
+	{% endif %}
+	
+<BODY BACKGROUND = "/media/images/playa4.jpg" >
+</BODY>
+{% endblock %}	

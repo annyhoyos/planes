@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Hoteles
+{% endblock %}
+{% block content %}
+	<h1>{{ hotel.nombre }}</h1>
+	{% if Figuras.imagen %}
+		<img src="/media/{{ editorial.imagen }}" width ="80px" heigth ="80px">
+	{% endif %}
+	<br>
+	<p><b>Nombre:</b> {{ Hotel.nombre}} </p>
+	<p><b>Categoria:</b> {{ Hotel.categoria}} </p>
+	
+	{% endfor %}
+	
+	<br>
+	<a href="/planes/page/1">Mostrar Lista de Hoteles</a>
+{% endblock %}

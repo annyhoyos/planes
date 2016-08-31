@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	 Bienvenidos 
+{% endblock %}
+
+{% block content %}
+	<center><img src="/media/images/titulo.png" height="25%" widht="5%">
+	<h3 align="center">Encuentra los mejores planes a buen precio</h3>
+	<iframe width="400" height="315" src="https://www.youtube.com/embed/RIqwrtKsyV8" frameborder="0" allowfullscreen></iframe>
+	</center>
+	<br>
+	<h4 align="center">El mundo es un libro, y aquellos que no viajan leen solo una página.</h4>
+
+	{% if user.get_profile.photo %}
+		<img src="/media/{{ user.get_profile.photo }}" width = "100px" heigth = "100px"/>
+		<li class ="nav-header">Turismo.com </li>
+		
+
+
+	{% endif %}
+	{% if user.get_profile.telefono %}
+		<p>Numero Telefonico : {{ user.get_profile.telefono }}</p>
+	{% endif %}
+{% endblock %}
+

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Planes
+{% endblock %}
+
+{% block content %}
+	<center>
+	<h1> {{ planes.nombre }} </h1>
+	{% if planes.imagen %}
+
+		<img src="/media/{{ planes.imagen }}"  width ="400px" heigth ="400px">	
+	</center>
+	{% endif %}
+	<br>
+	{% if planes %}
+
+		{% for d in planes.destino.all %}
+			<p> <b>Destino: </b> {{ d.nombre }} </p>
+		{% endfor %}
+
+		{% for h in planes.hotel.all %}
+			<p> <b>Hotel: </b> {{ h.nombre }} </p>
+		{% endfor %}
+
+		{% for d in planes.descripcion.all %}
+			<p> <b>Descripcion: </b> {{ d.incluye }} </p>
+		{% endfor %}
+		
+
+	{% endif %}
+
+	<p> <b>Nombre:</b> {{ planes.nombre}} </p>
+	<p> <b>Fecha_Inicio:</b> {{ planes.fecha_inicio}} </p>
+	<p> <b>Fecha_Fin:</b> {{ planes.fecha_fin}} </p>
+	<p> <b>Precio:</b> {{ planes.precio}} </p>
+	
+	
+	
+
+	<a href="/planes/page/1">Mostrar lista de Planes</a>
+
+	
+{% endblock %}
+
+
+	
+	
+	
+
+	
+ 
+	
+

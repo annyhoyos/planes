@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+	buscar planes
+{% endblock %}
+{% block content %}
+	
+	{% if planes %}
+		{% for p in planes %}
+			{{ p.nombre }}
+			<a class = "btn btn-success" href="/planes/{{p.id}}" > <li class = "icon-search"></li> ver </a>
+		{% endfor %}
+
+                           
+	{% else %}
+		<span>Articulo no encontrado</span>
+	{% endif %}
+{% endblock %}
+
